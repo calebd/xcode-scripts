@@ -8,16 +8,20 @@ def bot_name
   ENV['XCS_BOT_NAME']
 end
 
-def dsym_path_before_zip
-  File.join(ENV['XCS_ARCHIVE'], 'dSYMs', 'Tiiny.app.dSYM')
-end
-
-def dsym_path_after_zip
-  File.join('/tmp', "#{bot_name}.dsym.zip")
+def product_name
+  ENV['PRODUCT_NAME']
 end
 
 def hockey_token
   ENV['CMD_HOCKEY_TOKEN']
+end
+
+def dsym_path_before_zip
+  File.join(ENV['XCS_ARCHIVE'], 'dSYMs', "#{product_name}.app.dSYM")
+end
+
+def dsym_path_after_zip
+  File.join('/tmp', "#{bot_name}.dsym.zip")
 end
 
 def zip_dsym
@@ -32,7 +36,7 @@ def curl_command
     '-F notify=0',
     "-F ipa=@\"#{ipa_path}\"",
     "-F dsym=@\"#{dsym_path_after_zip}\"",
-    "-H \"X-HockeyAppToken: 70038cfc620f4fe59d7046d7be480ebd\"",
+    "-H \"X-HockeyAppToken: #{hockey_token}\"",
     'https://rink.hockeyapp.net/api/2/apps/upload'
   ]
   command.join(" ")
