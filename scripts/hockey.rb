@@ -13,7 +13,7 @@ def dsym_path_before_zip
 end
 
 def dsym_path_after_zip
-  File.join('tmp', "#{bot_name}.dsym.zip")
+  File.join('/tmp', "#{bot_name}.dsym.zip")
 end
 
 def hockey_token
@@ -37,5 +37,5 @@ def upload
   )
 end
 
-raise "Unable to create dsym.zip." unless zip_dsym
-raise "Upload failed." unless upload
+raise 'Unable to create dsym.zip.' unless zip_dsym
+raise 'Upload failed.' unless upload
