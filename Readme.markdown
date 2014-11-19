@@ -30,6 +30,7 @@ I use the deployment scripts like this:
 ```sh
 export LC_ALL=en_US.UTF-8
 export CMD_HOCKEY_TOKEN=abcd1234
+export CMD_PRODUCT_NAME=App
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/calebd/xcode-bot-scripts/master/scripts/hockey.rb)"
 ```
 
