@@ -37,5 +37,7 @@ def upload
   )
 end
 
+puts hockey_token
+
 raise 'Unable to create dsym.zip.' unless zip_dsym
 raise 'Upload failed.' unless upload
