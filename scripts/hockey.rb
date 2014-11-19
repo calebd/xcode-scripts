@@ -1,3 +1,5 @@
+require 'fileutils'
+
 def ipa_path
  File.join(ENV['XCS_OUTPUT_DIR'], ENV['XCS_PRODUCT'])
 end
