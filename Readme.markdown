@@ -37,4 +37,4 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/calebd/xcode-bot-scripts
 
 I welcome pull requests with any scripts you’d like to share with anyone! I’d like to make the process of setting up Xcode bots as easy as possible :)
 
-Send any feedback to [@calebd](https://twitter.com/calebd)
+Send any feedback to [@calebd](https://twitter.com/calebd).

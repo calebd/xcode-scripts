@@ -9,7 +9,7 @@ def bot_name
 end
 
 def product_name
-  ENV['PRODUCT_NAME']
+  ENV['CMD_PRODUCT_NAME']
 end
 
 def hockey_token
@@ -26,7 +26,7 @@ end
 
 def zip_dsym
   FileUtils.rm_f(dsym_path_after_zip)
-  system("/usr/bin/zip -r #{dsym_path_after_zip} #{dsym_path_before_zip}")
+  system("/usr/bin/zip -r \"#{dsym_path_after_zip}\" \"#{dsym_path_before_zip}\"")
 end
 
 def curl_command
