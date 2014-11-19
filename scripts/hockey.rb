@@ -28,11 +28,11 @@ end
 def upload
   system(
     '/usr/bin/curl',
+    "-H \"X-HockeyAppToken: #{hockey_token}\"",
     '-F status=2',
     '-F notify=0',
     "-F ipa=@\"#{ipa_path}\"",
     "-F dsym=@\"#{dsym_path_after_zip}\"",
-    "-H \"X-HockeyAppToken: #{hockey_token}\"",
     'https://rink.hockeyapp.net/api/2/apps/upload'
   )
 end
