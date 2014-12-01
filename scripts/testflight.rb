@@ -12,15 +12,15 @@ def product_name
   ENV['XCS_PRODUCT']
 end
 
-def testflight_token
+def api_token
   ENV['CMD_API_TOKEN']
 end
 
-def testflight_team_token
+def team_token
   ENV['CMD_TEAM_TOKEN']
 end
 
-def testflight_distribution_lists
+def distribution_lists
   ENV['CMD_DISTRIBUTION_LISTS']
 end
 
@@ -44,9 +44,9 @@ def curl_command
     '-F notify=False',
     "-F file=@\"#{ipa_path}\"",
     "-F dsym=@\"#{dsym_path_after_zip}\"",
-    "-F api_token=\"#{testflight_token}\"",
-    "-F team_token=\"#{testflight_team_token}\"",
-    "-F distribution_lists=\"#{testflight_distribution_lists}\"",
+    "-F api_token=\"#{api_token}\"",
+    "-F team_token=\"#{team_token}\"",
+    "-F distribution_lists=\"#{distribution_lists}\"",
     'http://testflightapp.com/api/builds.json'
   ]
   command.join(" ")
