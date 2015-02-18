@@ -7,7 +7,7 @@ def product_path
 end
 
 def path_for_locale(locale)
-  File.join(product_path, locale, '.lproj')
+  File.join(product_path, locale + '.lproj')
 end
 
 def locale_for_path(locale)
@@ -31,7 +31,7 @@ end
 compiled_locales.reject do |locale|
   SUPPORTED_LOCALES.include?(locale)
 end.each do |locale|
-  puts "Removing unsupported locale: #{locale}"
   path = path_for_locale(locale)
-  `rm -f #{path}`
+  puts "Removing unsupported locale: #{locale}"
+  raise "Unable to remove locale: #{locale}" unless system("rm -rf #{path}")
 end
