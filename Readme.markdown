@@ -1,8 +1,8 @@
-# Xcode Bot Scripts
+# Xcode Scripts
 
-Helpful scripts for Xcode bots.
+Helpful scripts for Xcode.
 
-# Environment Variables
+# Bot Environment Variables
 
 Here are some useful Xcode bot environment variables:
 
@@ -31,7 +31,7 @@ I use the deployment scripts like this:
 export LC_ALL=en_US.UTF-8
 export CMD_HOCKEY_TOKEN=abcd1234
 export CMD_PRODUCT_NAME=App
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/calebd/xcode-bot-scripts/master/scripts/hockey.rb)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/calebd/xcode-scripts/master/bot-scripts/hockey.rb)"
 ```
 
 # Contributions
